@@ -7,9 +7,10 @@
     "build": "tsc",
     "test": "jest",
     "db:set-user-role": "node dist/db/set-user-role.js",
-    "prepare": "husky install",
+    "prepare": "husky ||:",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
+    "nuke": "rm -rf dist && rm -rf node_modules",
     "migrate": "ts-node node_modules/.bin/node-pg-migrate -j ts -m db_migrations"
   },
   "repository": {

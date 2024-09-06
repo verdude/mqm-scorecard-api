@@ -11,11 +11,11 @@
     "baseUrl": ".",
     "rootDir": "src/",
     "esModuleInterop": true,
-    "declaration": true,
+    "declaration": true
   },
   "include": [
     "src/**/*",
-    "@types/**/*",
+    "@types/**/*"
   ],
   "exclude": [
     "**/__tests__/**/*"
