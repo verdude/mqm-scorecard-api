@@ -7,5 +7,6 @@ RUN npm run build
 FROM node:16
 WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/dist ./dist
+COPY --from=builder /usr/src/app/node_modules ./node_modules
 EXPOSE 8081
-CMD ["node", "index.js"]
+CMD ["node", "dist/index.js"]
