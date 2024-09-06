@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16.4
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./.postgres-data:/var/lib/postgresql/data
+    restart: always
+
+  backend:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+volumes:
+  postgres-data:
