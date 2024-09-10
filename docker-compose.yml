@@ -15,11 +15,18 @@ services:
     build:
       context: .
     ports:
-      - "8000:8000"
+      - "3000:3000"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+      - APP_ENV
+      - AUTH_SECRET
+      - DATABASE_URL
+      - EMAIL_ADDRESS
+      - EMAIL_PASSWORD
+      - EMAIL_PROVIDER
+      - EMAIL_PROVIDER_API_KEY
 
 volumes:
   postgres-data:
